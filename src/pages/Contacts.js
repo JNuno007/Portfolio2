@@ -17,7 +17,7 @@ const ContainerWrapper = styled(Container)`
 
 const FooterWrapper = styled.div`
     position: absolute;
-    bottom: 20px;
+    bottom: 55px;
     text-align: center;
     background-color: white;
     border-radius: 15px;
@@ -48,7 +48,7 @@ export default class Contacts extends Component {
 
             <Form.Group controlId="formTextArea">
               <Form.Label>Message</Form.Label>
-              <Form.Control as="textarea" rows="12" />
+              <Form.Control as="textarea" rows="10" />
             </Form.Group>
 
             <div style={{ textAlign: "center" }}>

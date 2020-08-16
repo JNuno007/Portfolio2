@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import MobileNavbar from "../components/MobileNavbar";
 
 const Container = styled.div`
   background-image: url("wallpaper.jpg");
@@ -19,6 +20,10 @@ export default class Main extends Component {
   }
 
   render() {
-  return <Container>{this.props.children}</Container>;
+  return (
+  <Container>
+    {this.props.children}
+    <MobileNavbar />
+  </Container>);
   }
 }

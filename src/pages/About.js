@@ -178,39 +178,40 @@ export default class About extends Component {
             <Col>
               <StyledContainer title={"Other Tools"}>
                 <Row>
-                  <Col md={4}>
+                  <Col xs={6} md={4}>
                     <Skill title={"GitHub"} image={GITHUB} stars={4} />
                   </Col>
-                  <Col md={4}>
+                  <Col xs={6} md={4}>
                     <Skill title={"JIRA"} image={JIRA} stars={4} />
                   </Col>
-                  <Col md={4}>
+                  <Col xs={6} md={4}>
                     <Skill title={"Bitbucket"} image={BITBUCKET} stars={4} />
                   </Col>
-                </Row>
-                <p></p>
-                <Row>
-                  <Col md={4}>
+
+                  <p></p>
+
+                  <Col xs={6} md={4}>
                     <Skill title={"Trello"} image={TRELLO} stars={4} />
                   </Col>
-                  <Col md={4}>
+                  <Col xs={6} md={4}>
                     <Skill title={"Maven"} image={MAVEN} stars={4} />
                   </Col>
-                  <Col md={4}>
+                  <Col xs={6} md={4}>
                     <Skill title={"Docker"} image={DOCKER} stars={4} />
                   </Col>
-                </Row>
-                <p></p>
-                <Row>
-                  <Col md={4}>
+
+                  <p></p>
+
+                  <Col xs={6} md={4}>
                     <Skill title={"Webpack"} image={WEBPACK} stars={4} />
                   </Col>
                 </Row>
               </StyledContainer>
             </Col>
           </Row>
+          <p></p>
         </ContainerWrapper>
-
+        <br />
         {this.state.openToast && (
           <WarningToast
             title={"Start Rating"}
