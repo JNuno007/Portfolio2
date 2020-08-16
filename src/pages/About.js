@@ -188,6 +188,7 @@ export default class About extends Component {
                     <Skill title={"Bitbucket"} image={BITBUCKET} stars={4} />
                   </Col>
                 </Row>
+                <p></p>
                 <Row>
                   <Col md={4}>
                     <Skill title={"Trello"} image={TRELLO} stars={4} />
@@ -199,6 +200,7 @@ export default class About extends Component {
                     <Skill title={"Docker"} image={DOCKER} stars={4} />
                   </Col>
                 </Row>
+                <p></p>
                 <Row>
                   <Col md={4}>
                     <Skill title={"Webpack"} image={WEBPACK} stars={4} />
