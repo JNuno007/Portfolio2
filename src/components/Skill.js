@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Image from "../images/react.svg";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 export default class Skill extends Component {
@@ -9,7 +8,7 @@ export default class Skill extends Component {
     for (var i = 0; i < this.props.stars; i++) {
       result.push(<AiFillStar />);
     }
-    for (var i = this.props.stars; i < 5; i++) {
+    for (var j = this.props.stars; j < 5; j++) {
       result.push(<AiOutlineStar />);
     }
     return result;
@@ -22,7 +21,7 @@ export default class Skill extends Component {
         </Row>
         <Row>
           <Col>
-            <img src={this.props.image} height="60px" width="60px"/>
+            <img src={this.props.image} alt={this.props.title} height="60px" width="60px"/>
           </Col>
         </Row>
         <Row>

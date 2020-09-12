@@ -11,13 +11,15 @@ import SideNav, {
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
 import { GoHome } from "react-icons/go";
-import { BsPerson } from "react-icons/bs";
+import { BsPerson, BsFileEarmarkText } from "react-icons/bs";
 import { RiMailSendLine, RiDashboardLine } from "react-icons/ri";
 import Main from "./Main";
 import Intro from "./Intro";
 import About from "./About";
 import Projects from "./Projects";
 import Contacts from "./Contacts";
+
+import CV from "../cv/CV.pdf";
 
 // Toggle
 const StyledToggle = styled(Toggle)`
@@ -84,31 +86,49 @@ const NavbarVertical = () => {
                   </NavIcon>
                   <NavText>Contact</NavText>
                 </NavItem>
+                <NavItem eventKey="resume">
+                  <NavIcon>
+                    <BsFileEarmarkText
+                      style={{ fontSize: "1.75em" }}
+                      title="CV"
+                    />
+                  </NavIcon>
+                  <NavText>CV</NavText>
+                </NavItem>
               </SideNav.Nav>
             </SideNavStyled>
             <main style={{ height: "100%" }}>
               <Route
                 path="/"
                 exact
-                component={(props) => <Main children={<Intro />} />}
+                component={() => <Main children={<Intro />} />}
               />
               <Route
                 path="/intro"
                 exact
-                component={(props) => <Main children={<Intro />} />}
+                component={() => <Main children={<Intro />} />}
               />
               <Route
                 path="/about"
-                component={(props) => <Main children={<About />} />}
+                component={() => <Main children={<About />} />}
               />
               <Route
                 path="/projects"
-                component={(props) => <Main children={<Projects />} />}
+                component={() => <Main children={<Projects />} />}
               />
               <Route
                 path="/contacts"
                 exact
-                component={(props) => <Main children={<Contacts />} />}
+                component={() => <Main children={<Contacts />} />}
+              />
+              <Route
+                path="/resume"
+                exact
+                component={() => {
+                  window.open(CV);
+                  window.location = "/";
+                  return false
+                }}
               />
             </main>
           </React.Fragment>

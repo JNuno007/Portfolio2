@@ -79,7 +79,7 @@ export default class About extends Component {
                     <Skill title={"JavaScript"} image={VANILLA} stars={4} />
                   </Col>
                   <Col xs={6} md>
-                    <Skill title={"AngularJS"} image={ANGULAR} stars={4} />
+                    <Skill title={"AngularJS"} image={ANGULAR} stars={2} />
                   </Col>
                 </Row>
                 <p></p>
@@ -88,13 +88,13 @@ export default class About extends Component {
                     <Skill title={"ReactJS"} image={REACT} stars={4} />
                   </Col>
                   <Col xs={6} md>
-                    <Skill title={"VueJS"} image={VUE} stars={4} />
+                    <Skill title={"VueJS"} image={VUE} stars={3} />
                   </Col>
                   <Col xs={6} md>
                     <Skill title={"Bootstrap"} image={BOOTSRAP} stars={4} />
                   </Col>
                   <Col xs={6} md>
-                    <Skill title={"Material UI"} image={MATERIALUI} stars={4} />
+                    <Skill title={"Material UI"} image={MATERIALUI} stars={3} />
                   </Col>
                 </Row>
               </StyledContainer>
@@ -109,11 +109,11 @@ export default class About extends Component {
                     <Skill
                       title={"Android Studio"}
                       image={ANDROID_STUDIO}
-                      stars={4}
+                      stars={3}
                     />
                   </Col>
                   <Col xs={6} md>
-                    <Skill title={"Swift"} image={SWIFT} stars={4} />
+                    <Skill title={"Swift"} image={SWIFT} stars={2} />
                   </Col>
                   <Col xs={6} md>
                     <Skill title={"React Native"} image={REACT} stars={4} />
@@ -137,7 +137,7 @@ export default class About extends Component {
                     <Skill title={"JAVA 8"} image={JAVA} stars={4} />
                   </Col>
                   <Col xs={6} md>
-                    <Skill title={"JAVA Spring"} image={JAVASPRING} stars={4} />
+                    <Skill title={"JAVA Spring"} image={JAVASPRING} stars={3} />
                   </Col>
                 </Row>
               </StyledContainer>
@@ -149,22 +149,22 @@ export default class About extends Component {
               <StyledContainer title="Back-End">
                 <Row>
                   <Col xs={6} md>
-                    <Skill title={"MySQL"} image={MYSQL} stars={4} />
+                    <Skill title={"MySQL"} image={MYSQL} stars={3} />
                   </Col>
                   <Col xs={6} md>
-                    <Skill title={"Oracle"} image={ORACLE} stars={4} />
+                    <Skill title={"Oracle"} image={ORACLE} stars={3} />
                   </Col>
                   <Col xs={6} md>
-                    <Skill title={"Postgres"} image={POSTGRES} stars={4} />
+                    <Skill title={"Postgres"} image={POSTGRES} stars={3} />
                   </Col>
                 </Row>
                 <p></p>
                 <Row>
                   <Col xs={6} md>
-                    <Skill title={"MSSQL"} image={MSSQL} stars={4} />
+                    <Skill title={"MSSQL"} image={MSSQL} stars={3} />
                   </Col>
                   <Col xs={6} md>
-                    <Skill title={"MongoDB"} image={MONGODB} stars={4} />
+                    <Skill title={"MongoDB"} image={MONGODB} stars={3} />
                   </Col>
                   <Col xs={6} md>
                     <Skill title={"Sequelize"} image={SEQUELIZE} stars={4} />
@@ -187,9 +187,9 @@ export default class About extends Component {
                   <Col xs={6} md={4}>
                     <Skill title={"Bitbucket"} image={BITBUCKET} stars={4} />
                   </Col>
-
+                  </Row>
                   <p></p>
-
+                  <Row>
                   <Col xs={6} md={4}>
                     <Skill title={"Trello"} image={TRELLO} stars={4} />
                   </Col>
@@ -197,13 +197,13 @@ export default class About extends Component {
                     <Skill title={"Maven"} image={MAVEN} stars={4} />
                   </Col>
                   <Col xs={6} md={4}>
-                    <Skill title={"Docker"} image={DOCKER} stars={4} />
+                    <Skill title={"Docker"} image={DOCKER} stars={3} />
                   </Col>
-
+                  </Row>
                   <p></p>
-
+                  <Row>
                   <Col xs={6} md={4}>
-                    <Skill title={"Webpack"} image={WEBPACK} stars={4} />
+                    <Skill title={"Webpack"} image={WEBPACK} stars={3} />
                   </Col>
                 </Row>
               </StyledContainer>
@@ -216,7 +216,7 @@ export default class About extends Component {
           <WarningToast
             title={"Start Rating"}
             message={
-              "The star rating represents the level of knowledge I have in a certain element"
+              "The star rating represents what I feel about being comfortable to work with."
             }
           />
         )}

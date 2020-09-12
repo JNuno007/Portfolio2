@@ -11,14 +11,10 @@ const Container = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: scroll;
+  overflow-x: hidden;
 `;
 
 export default class Main extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
   return (
   <Container>

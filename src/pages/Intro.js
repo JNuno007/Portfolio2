@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Button } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Phrase = styled.div`
   height: 100%;
@@ -35,10 +35,9 @@ const BlinkCursor = styled.h1`
 `;
 
 export class Intro extends Component {
-
   goToAbout = () => {
-    window.location = '/about';
-  }
+    window.location = "/about";
+  };
 
   render() {
     return (
@@ -53,11 +52,14 @@ export class Intro extends Component {
         >
           <h1 style={{ color: "gray" }}>{"<"} </h1>
           <h1 style={{ color: "#0057e5" }}> {" João Ferreira "} </h1>
-          <h1 style={{ color: "gray" }}> {" />"}</h1><BlinkCursor>|</BlinkCursor>
+          <h1 style={{ color: "gray" }}> {" />"}</h1>
+          <BlinkCursor>|</BlinkCursor>
         </div>
         <h2>and I'm a Software Developer</h2>
-        <br/>
-        <Button variant="outline-dark" onClick={this.goToAbout}>About me</Button>
+        <br />
+        <Link to="/about">
+          <Button variant="outline-dark">About me</Button>
+        </Link>
       </Phrase>
     );
   }

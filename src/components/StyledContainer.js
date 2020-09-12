@@ -20,10 +20,6 @@ export default class StyledContainer extends Component {
     prop: PropTypes,
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Wrapper>
