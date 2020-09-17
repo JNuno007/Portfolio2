@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { AiFillPlayCircle, AiFillPicture } from "react-icons/ai";
 import Modal from "react-bootstrap/Modal";
 import VideoPlayer from "./VideoPlayer";
+import { withNamespaces } from "react-i18next";
 
 const CardWrapper = styled(Card)`
   box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
@@ -14,7 +15,7 @@ const ModalHeaderWrapper = styled(Modal.Header)`
   border-color: red;
 `;
 
-export default class CardProject extends Component {
+class CardProject extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,6 +36,7 @@ export default class CardProject extends Component {
   };
 
   render() {
+    const {t} = this.props;
     return (
       <>
         <CardWrapper style={{ width: "20rem" }}>
@@ -56,7 +58,7 @@ export default class CardProject extends Component {
               ) : (
                 <AiFillPicture size="2em" />
               )}{" "}
-              Check Project {this.props.video ? "Video" : "Pictures"}
+              {this.props.video ? t('projectCheckVideoBtn') : t('projectCheckPicturesBtn')}
             </Button>
           </Card.Body>
           <Card.Footer>{this.props.footer}</Card.Footer>
@@ -87,3 +89,5 @@ export default class CardProject extends Component {
     );
   }
 }
+
+export default withNamespaces()(CardProject)

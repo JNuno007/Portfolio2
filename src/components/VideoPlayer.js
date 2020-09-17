@@ -10,9 +10,8 @@ export default class VideoPlayer extends Component {
   }
 
   handleResize = () => {
-    let containerSize = document.getElementById("video-container").offsetWidth;
-
     if (document.getElementById("video-container")) {
+      let containerSize = document.getElementById("video-container").offsetWidth;
       if (containerSize === 798) {
         this.setState({
           width: 770,
@@ -54,8 +53,8 @@ export default class VideoPlayer extends Component {
     return (
       <iframe
         title={this.props.title}
-        width={this.state.width}
-        height={this.state.height}
+        width={'100%'}
+        height={'500vh'}
         src={this.props.video}
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

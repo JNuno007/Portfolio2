@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SideNav, {
@@ -18,8 +18,13 @@ import Intro from "./Intro";
 import About from "./About";
 import Projects from "./Projects";
 import Contacts from "./Contacts";
+import i18n from "../i18n";
+import { withNamespaces } from "react-i18next";
 
 import CV from "../cv/CV.pdf";
+import { Button } from "react-bootstrap";
+import PT from "../images/pt.svg";
+import EN from "../images/uk.svg";
 
 // Toggle
 const StyledToggle = styled(Toggle)`
@@ -40,7 +45,19 @@ const SideNavStyled = styled(SideNav)`
   }
 `;
 
-const NavbarVertical = () => {
+const NavbarVertical = ({ t }) => {
+  const [language, setLanguage] = useState("en");
+
+  const changeLanguage = () => {
+    if (i18n.language == "en") {
+      i18n.changeLanguage("pt");
+      setLanguage("pt");
+    } else {
+      i18n.changeLanguage("en");
+      setLanguage("en");
+    }
+  };
+
   return (
     <Router>
       <Route
@@ -60,13 +77,13 @@ const NavbarVertical = () => {
                   <NavIcon>
                     <GoHome style={{ fontSize: "1.75em" }} title="Home" />
                   </NavIcon>
-                  <NavText>Home</NavText>
+                  <NavText>{t('sideBarIntro')}</NavText>
                 </NavItem>
                 <NavItem eventKey="about">
                   <NavIcon>
                     <BsPerson style={{ fontSize: "1.75em" }} title="About" />
                   </NavIcon>
-                  <NavText>About</NavText>
+            <NavText>{t('sideBarAbout')}</NavText>
                 </NavItem>
                 <NavItem eventKey="projects">
                   <NavIcon>
@@ -75,7 +92,7 @@ const NavbarVertical = () => {
                       title="Projects"
                     />
                   </NavIcon>
-                  <NavText>Projects</NavText>
+                  <NavText>{t('sideBarProjects')}</NavText>
                 </NavItem>
                 <NavItem eventKey="contacts">
                   <NavIcon>
@@ -84,7 +101,7 @@ const NavbarVertical = () => {
                       title="Contact"
                     />
                   </NavIcon>
-                  <NavText>Contact</NavText>
+                  <NavText>{t('sideBarContact')}</NavText>
                 </NavItem>
                 <NavItem eventKey="resume">
                   <NavIcon>
@@ -93,8 +110,11 @@ const NavbarVertical = () => {
                       title="CV"
                     />
                   </NavIcon>
-                  <NavText>CV</NavText>
+                  <NavText>{t('sideBarCV')}</NavText>
                 </NavItem>
+                <Button variant="dark" onClick={changeLanguage} block>
+                  {language === 'en' ? <img src={EN} width="20px"/> : <img src={PT} width="20px"/>}
+                </Button>
               </SideNav.Nav>
             </SideNavStyled>
             <main style={{ height: "100%" }}>
@@ -127,7 +147,7 @@ const NavbarVertical = () => {
                 component={() => {
                   window.open(CV);
                   window.location = "/";
-                  return false
+                  return false;
                 }}
               />
             </main>
@@ -138,4 +158,4 @@ const NavbarVertical = () => {
   );
 };
 
-export default NavbarVertical;
+export default withNamespaces()(NavbarVertical);

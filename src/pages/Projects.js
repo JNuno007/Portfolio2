@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import WarningToast from "../components/WarningToast";
 import { Row, Col, Carousel } from "react-bootstrap";
 import styled from "styled-components";
+import { withNamespaces } from "react-i18next";
 
 //Thumbnail
 import CRYPTO_APP_IMAGE from "../images/thumbnails/cryptoapp.jpg";
@@ -56,9 +57,6 @@ import JUMP_2 from "../images/carousel/saltar.png";
 import JUMP_3 from "../images/carousel/Screenshot_2.png";
 import JUMP_4 from "../images/carousel/Screenshot_4.png";
 
-//Descriptions
-import projects from "../json/projects.json";
-
 const ColWrapper = styled(Col)`
   display: flex;
   justify-content: center;
@@ -80,7 +78,7 @@ const ToolsIcon = styled.img`
   }
 `;
 
-export default class Projects extends Component {
+class Projects extends Component {
   constructor() {
     super();
     this.state = {
@@ -93,16 +91,17 @@ export default class Projects extends Component {
   }
 
   render() {
+    const {t} = this.props;
     return (
       <Wrapper>
         <Container>
           <Row>
             <ColWrapper xs={12} md>
               <CardProject
-                title="Personal App"
+                title={t('projectAppTitle')}
                 image={PERSONAL_APP_IMAGE}
                 video={"https://www.youtube.com/embed/ds-b5e6bb7k"}
-                description={projects.personalApp}
+                description={t('projectAppText')}
                 footer={
                   <>
                     <ToolsIcon
@@ -116,10 +115,10 @@ export default class Projects extends Component {
             </ColWrapper>
             <ColWrapper xs={12} md>
               <CardProject
-                title="DigiMuseu"
+                title={t('projectDigiMuseuTitle')}
                 image={DIGIMUSEUM_IMAGE}
                 video={"https://www.youtube.com/embed/Zu8wYdqeDIU"}
-                description={projects.digiMuseu}
+                description={t('projectDigiMuseuText')}
                 footer={
                   <>
                     <ToolsIcon
@@ -133,10 +132,10 @@ export default class Projects extends Component {
             </ColWrapper>
             <ColWrapper xs={12} md>
               <CardProject
-                title="UnQueueIT"
+                title={t('projectUnqueueitTitle')}
                 image={UNQUEUEIT_IMAGE}
                 video={"https://www.youtube.com/embed/tnrd91SbhGc"}
-                description={projects.unqueueIT}
+                description={t('projectUnqueueitText')}
                 footer={
                   <>
                     <ToolsIcon
@@ -154,10 +153,10 @@ export default class Projects extends Component {
           <Row>
             <ColWrapper xs={12} md>
               <CardProject
-                title="Jump"
+                title={t('projectJumpTitle')}
                 image={JUMP_IMAGE}
                 carousel
-                description={projects.jump}
+                description={t('projectJumpText')}
                 footer={
                   <>
                     <ToolsIcon
@@ -203,9 +202,9 @@ export default class Projects extends Component {
             </ColWrapper>
             <ColWrapper xs={12} md>
               <CardProject
-                title="Star Wars Game"
+                title={t('projectStarWarsGameTitle')}
                 image={STAR_WARS_IMAGE}
-                description={projects.starWars}
+                description={t('projectStarWarsGameText')}
                 footer={
                   <>
                     <ToolsIcon
@@ -220,9 +219,9 @@ export default class Projects extends Component {
             </ColWrapper>
             <ColWrapper xs={12} md>
               <CardProject
-                title="Crypto Coin App"
+                title={t('projectCryptoCoinAppTitle')}
                 image={CRYPTO_APP_IMAGE}
-                description={projects.cryptoCoinApp}
+                description={t('projectCryptoCoinAppText')}
                 footer={
                   <>
                     <ToolsIcon src={IONIC} title="Ionic" width={56} />
@@ -235,9 +234,9 @@ export default class Projects extends Component {
           <Row>
             <ColWrapper xs={12} md>
               <CardProject
-                title="Restaurant Management"
+                title={t('projectRestaurantManagementTitle')}
                 image={RESTAURANTE_IMAGE}
-                description={projects.restaurantManagement}
+                description={t('projectRestaurantManagementText')}
                 footer={
                   <>
                     <ToolsIcon src={JAVA} title="JAVA 8" width={30} />
@@ -250,10 +249,10 @@ export default class Projects extends Component {
             </ColWrapper>
             <ColWrapper xs={12} md>
               <CardProject
-                title="League of Legends Tournament Management"
+                title={t('projectLolTournamentManagementTitle')}
                 image={LEAGUE_LEGENDS_IMAGE}
                 video={"https://www.youtube.com/embed/NpBMx5pUfZo"}
-                description={projects.lolManagement}
+                description={t('projectLolTournamentManagementText')}
                 footer={
                   <>
                     <ToolsIcon src={JAVA} title="JAVA 8" width={30} />
@@ -265,9 +264,9 @@ export default class Projects extends Component {
             </ColWrapper>
             <ColWrapper xs={12} md>
               <CardProject
-                title="Terralva"
+                title={t('projectTerralvaTitle')}
                 image={TERRALVA_IMAGE}
-                description={projects.Terralva}
+                description={t('projectTerralvaText')}
                 hidden
                 footer={
                   <>
@@ -282,9 +281,9 @@ export default class Projects extends Component {
           <Row>
             <ColWrapper xs={12} md>
               <CardProject
-                title="Capture the Flag"
+                title={t('projectCaptureTheFlagTitle')}
                 image={CTF_IMAGE}
-                description={projects.captureTheFlag}
+                description={t('projectCaptureTheFlagText')}
                 footer={
                   <>
                     <ToolsIcon src={HTML} title="HTML" width={30} />
@@ -299,9 +298,9 @@ export default class Projects extends Component {
             </ColWrapper>
             <ColWrapper xs={12} md>
               <CardProject
-                title="Website Product Management"
+                title={t('projectWebsiteProductManagementTitle')}
                 image={WEBSITE_IMAGE}
-                description={projects.websiteManagement}
+                description={t('projectWebsiteProductManagementText')}
                 footer={
                   <>
                     <ToolsIcon src={PHP} title="PHP" width={40} />
@@ -314,10 +313,10 @@ export default class Projects extends Component {
             </ColWrapper>
             <ColWrapper xs={12} md>
               <CardProject
-                title="myIMS"
+                title={t('projectMyIMSTitle')}
                 image={MY_IMS_IMAGE}
                 video={"https://www.youtube.com/embed/hK4ECIBCcLQ"}
-                description={projects.myIMS}
+                description={t('projectMyIMSText')}
                 footer={
                   <>
                     <ToolsIcon src={REACT} title="React Native" width={46} />
@@ -329,9 +328,9 @@ export default class Projects extends Component {
           <Row>
             <ColWrapper xs={12} md>
               <CardProject
-                title="Performance Management System"
+                title={t('projectPerformanceManagementSystemTitle')}
                 image={PMS_IMAGE}
-                description={projects.PMS}
+                description={t('projectPerformanceManagementSystemText')}
                 footer={
                   <>
                     <ToolsIcon src={JAVA} title="JAVA" width={30} />
@@ -347,9 +346,9 @@ export default class Projects extends Component {
             </ColWrapper>
             <ColWrapper xs={12} md>
               <CardProject
-                title="UnqueueIT"
+                title={t('projectUnqueueitTitle')}
                 image={UNQUEUEIT_IMAGE}
-                description={projects.unqueueIT}
+                description={t('projectUnqueueitText')}
                 footer={
                   <>
                     <ToolsIcon src={SWIFT} title="Swift" width={30} />
@@ -372,10 +371,10 @@ export default class Projects extends Component {
             </ColWrapper>
             <ColWrapper xs={12} md>
               <CardProject
-                title="CryptoStats"
+                title={t('projectCryptoStatsTitle')}
                 image={CRYPTO_STATS_IMAGE}
                 video={"https://www.youtube.com/embed/DUZoHs3wOhQ"}
-                description={projects.CryptoStats}
+                description={t('projectCryptoStatsText')}
                 footer={
                   <>
                     <ToolsIcon src={HTML} title="HTML" width={30} />
@@ -389,9 +388,9 @@ export default class Projects extends Component {
           <Row>
             <ColWrapper xs={12} md>
               <CardProject
-                title="Portfolio"
+                title={t('projectPortfolioTitle')}
                 image={PORTFOLIO_IMAGE}
-                description={projects.Portfolio}
+                description={t('projectPortfolioText')}
                 hidden
                 footer={
                   <>
@@ -405,9 +404,9 @@ export default class Projects extends Component {
         <br />
         {this.state.openToast && (
           <WarningToast
-            title={"Side Note"}
+            title={t('projectSideNoteTitle')}
             message={
-              "Some projects do not have any demo videos or pictures for copyright reasons.\n Contact me if you want to know more about the development of the projects."
+              t('projectSideNoteText')
             }
           />
         )}
@@ -415,3 +414,5 @@ export default class Projects extends Component {
     );
   }
 }
+
+export default withNamespaces()(Projects)

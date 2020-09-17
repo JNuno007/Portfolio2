@@ -5,6 +5,7 @@ import styled from "styled-components";
 import WarningToast from "../components/WarningToast";
 import { Row, Col } from "react-bootstrap";
 import Skill from "../components/Skill";
+import { withNamespaces } from "react-i18next";
 
 //Images
 import HTML from "../images/html.svg";
@@ -49,7 +50,7 @@ const ContainerWrapper = styled(Container)`
   overflow: "hidden";
 `;
 
-export default class About extends Component {
+class About extends Component {
   constructor() {
     super();
     this.state = {
@@ -62,6 +63,7 @@ export default class About extends Component {
   }
 
   render() {
+    const {t} = this.props;
     return (
       <>
         <ContainerWrapper>
@@ -176,7 +178,7 @@ export default class About extends Component {
           <p></p>
           <Row>
             <Col>
-              <StyledContainer title={"Other Tools"}>
+              <StyledContainer title={t('aboutOtherTools')}>
                 <Row>
                   <Col xs={6} md={4}>
                     <Skill title={"GitHub"} image={GITHUB} stars={4} />
@@ -214,9 +216,9 @@ export default class About extends Component {
         <br />
         {this.state.openToast && (
           <WarningToast
-            title={"Start Rating"}
+            title={t('starRating')}
             message={
-              "The star rating represents what I feel about being comfortable to work with."
+              t('starRatingText')
             }
           />
         )}
@@ -224,3 +226,5 @@ export default class About extends Component {
     );
   }
 }
+
+export default withNamespaces()(About);
