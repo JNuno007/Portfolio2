@@ -81,8 +81,8 @@ export class Intro extends Component {
         </div>
         <h2>{t("hello2")}</h2>
         <br />
-        <Link to="/about">
-          <Button variant="outline-dark">{t("aboutMeBtn")}</Button>
+        <Link to="/projects">
+          <Button variant="outline-dark">{t("projectsBtn")}</Button>
         </Link>
         <div
           style={{

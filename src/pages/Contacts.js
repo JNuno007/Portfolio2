@@ -4,6 +4,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import styled from "styled-components";
 import { FiSend } from "react-icons/fi";
 import { withNamespaces } from "react-i18next";
+import WarningToast from "../components/WarningToast";
 
 const ContainerWrapper = styled(Container)`
   padding-top: 15px;
@@ -24,7 +25,7 @@ function encode(data) {
 class Contacts extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {messageSent: false};
   }
 
   handleChange = (e) => {
@@ -41,7 +42,10 @@ class Contacts extends Component {
         "form-name": form.getAttribute("name"),
         ...this.state,
       }),
-    }).catch((error) => alert(error));
+    })
+    .then(() => this.setState({messageSent: true}))
+    .finally(() => setTimeout(() => {window.location = "https://www.jcortez.pt/"}, 3000))
+    .catch((error) => alert(error));
   };
 
   render() {
@@ -112,6 +116,7 @@ class Contacts extends Component {
             </Form>
           </StyledContainer>
         </ContainerWrapper>
+        {this.state.messageSent && <WarningToast style={{width: '350px'}} title="Thank you!" message="We'll be in touch soon."/>}
       </>
     );
   }
